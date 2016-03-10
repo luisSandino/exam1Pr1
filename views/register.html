@@ -1,0 +1,32 @@
+
+<div class="container" ng-controller="RegisterController as register">
+    <h2>Enter your information</h2>
+    <form class="regiterForm" ng-submit="addAccount">
+      <div class="form-group ">
+        <label  for="clientName">Full name</label>
+        <input type="text" class="form-control input-lg" id="clientName" ng-model="newAct.clientName" placeholder="example: Luis Sandino Ruiz">
+      </div>
+      <div class="form-group ">
+          <label for="accountType">Type of account</label>
+          <select class="form-control input-lg" ng-model="inAccountType" ng-options="item for item in accountsType">
+          </select>
+      </div>   
+      <div class="form-group ">
+          <label for="currencyType">Type of currency</label>
+          <select class="form-control input-lg" ng-model="inCurrency" ng-options="currency for currency in currencies"></select>
+      </div>
+
+      <div class="form-group ">
+          <button type="text" ng-click="add(new)"   class="btn btn-default btn-lg">Submit Information</button>
+      </div>
+      
+    </form>
+<ul class="list-group">
+          <li class="list-group-item unstyled" ng-repeat="theAccount in account">
+            <span  >{{theAccount.clientName}} </span>
+          
+          </li>
+          
+        </ul>
+</div>
+        

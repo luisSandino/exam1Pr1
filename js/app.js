@@ -1,28 +1,35 @@
-angular.module('', ['ngStorage','ngRoute'] )
+angular.module('miBank', ['ngStorage','ngRoute','myServices'] )
 
 
 .config(['$routeProvider', function($routeProvider) {
 	$routeProvider
 	
 	.when('/', {
-	    templateUrl: 'views/xxx.html',
-	    controller: 'xxxxxController'
+	    templateUrl: 'views/register.html',
+	    controller: 'RegisterController'
+	    
 	})
 
-	.when('/xxxxx', {
-	    templateUrl: 'views/xxxx.html',
-	    controller: 'xxxxxController'
+	.when('/summary', {
+	    templateUrl: 'views/summary.html',
+	    controller: 'SummaryController'
 	})
 	
-	.when('/records', {
-	    templateUrl: 'views/xxxx.html',
-	    controller: 'xxxxxController'
+	.when('/movements', {
+	    templateUrl: 'views/movements.html',
+	    controller: 'MovementsController'
 	})
-	
+	.when('/detail', {
+	    templateUrl: 'views/detail.html',
+	    controller: 'DetailController'
+	})
+	.when('/edit', {
+	    templateUrl: 'views/edit.html',
+	    controller: 'EditController'
+	})
 	.otherwise({
 	  	redirectTo: '/'
 	});
 
-	
 }]);
 
