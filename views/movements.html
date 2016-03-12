@@ -1,27 +1,24 @@
-<div class="container">
+<div class="container" ng-controller="MovementsController">
     <h2>Add movement</h2>
-    <form>
+    <form ng-submit="addMovement()">
       <div class="form-group">
         <label for="movementDate">Date</label>
-          <input type="date" class="form-control" id="amount" placeholder="date of movement">
+          <input type="date" class="form-control" ng-model="newDate" placeholder="date of movement">
       </div>
-     
-      <div class="form-group">
+      <div class="form-group ">
           <label for="movementType">Type of movement</label>
-          <select class="form-control">
-            <option>Debit</option>
-            <option>Credit</option>
+          <select class="form-control " ng-model="newType" ng-options="item for item in movementType">
           </select>
-      </div>   
+      </div>
       <div class="form-group">
       <label for="amount">Amount</label>
-          <input type="text" class="form-control" id="amount" placeholder="Amount">
+          <input type="text" class="form-control" ng-model="newAmount" id="amount" placeholder="Amount">
       </div>
       <div class="form-group">
         <label for="movementDescription">Description of movement</label>
-        <textarea class="form-control" rows="3" id="movementDescription"></textarea>
+        <textarea class="form-control" rows="3"  ng-model="newDescription" id="movementDescription"></textarea>
       </div>
-      
-      <button type="submit" class="btn btn-default">Submit movement</button>
+     
+      <button type="text" class="btn btn-default">Submit movement</button>
     </form>
 </div>

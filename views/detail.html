@@ -1,0 +1,34 @@
+<div class="container" ng-controller="SummaryController">
+	<div class="panel  ">
+	  <div class="panel-heading">
+	    <h1>All transaction datails!</h1>
+		
+
+	  </div>
+	  <div class="panel-body">
+	   <h3>This is the detail of the transaction in </h3>
+			<table class="table " >
+			    <thead >
+			      <tr>
+			        <th>Transaction number: </th>
+			        <th >Date</th>
+			        <th class="detail" >Detail</th>
+			        <th>Amount</th>
+			        <th>Actions</th>
+			      </tr>
+			    </thead>
+	   			<tbody >
+				 	<tr ng-repeat="movement in movements"  ng-init="counter=$index">
+					    <td> cod: pr_{{counter}}</td>
+					    <td>{{movement.date |date}}</td>
+					    <td>{{movement.description}}</td>
+					    <td>{{movement.amount | currency}}</td>
+					    <td><button ng-click="removeItem()" class="btn btn-danger btn-sm">Eliminate transaction</button></td>
+			    	</tr>
+			    	
+	         	 </tbody>
+	         	 
+			</table>
+	  </div>
+	</div>
+</div>
